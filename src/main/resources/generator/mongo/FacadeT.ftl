@@ -4,6 +4,7 @@ import cn.com.flaginfo.framework.rsql.mongodb.dto.Rsql;
 import cn.com.flaginfo.framework.rsql.mongodb.dto.RsqlBase;
 import cn.com.flaginfo.framework.vo.ResultVO;
 import cn.com.flaginfo.framework.webmvc.utils.ResultGeneratorUtil;
+import cn.com.flaginfo.framework.rsql.mongodb.utils.ParseUtils;
 
 import ${basePackage}.${modelName}.facade.I${model}Facade;
 import ${basePackage}.${modelName}.model.${model};

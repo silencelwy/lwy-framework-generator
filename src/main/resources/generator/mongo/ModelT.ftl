@@ -4,6 +4,7 @@ package ${basePackage}.${modelName}.model;
 import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+import cn.com.flaginfo.framework.model.BaseModel;
 
 /**
  * @author ${author}
