@@ -6,6 +6,7 @@ import cn.com.flaginfo.framework.rsql.mongodb.dto.RsqlBase;
 import cn.com.flaginfo.framework.vo.ResultVO;
 import ${basePackage}.${modelName}.model.${model};
 import org.springframework.data.domain.Pageable;
+import java.util.List;
 
 /**
  * @author ${author}
