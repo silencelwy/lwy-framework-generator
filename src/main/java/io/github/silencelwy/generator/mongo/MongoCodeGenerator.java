@@ -52,6 +52,11 @@ public class MongoCodeGenerator {
             codeVo.setFileName(codeVo.getModel()+".java");
             FreeMakerMongoTemplate.getFreeMakerTemplate().generateFile("ModelT.ftl",codeVo);
 
+            //ExcelModel
+            codeVo.setMPath("/excel");
+            codeVo.setFileName(codeVo.getModel()+"Excel.java");
+            FreeMakerMongoTemplate.getFreeMakerTemplate().generateFile("ModelExcelT.ftl",codeVo);
+
             //vo
             codeVo.setMPath("/vo");
             codeVo.setFileName(codeVo.getModel()+"Vo.java");

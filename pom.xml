@@ -33,6 +33,16 @@
     </properties>
     <dependencies>
         <dependency>
+            <groupId>cn.com.flaginfo</groupId>
+            <artifactId>flaginfo-framework-webmvc</artifactId>
+            <version>2.0.2.1.SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.com.flaginfo</groupId>
+            <artifactId>ty-auth</artifactId>
+            <version>2.0.3.SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>org.freemarker</groupId>
             <artifactId>freemarker</artifactId>
             <version>2.3.23</version>

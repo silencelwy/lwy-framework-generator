@@ -1,9 +1,12 @@
 package ${basePackage}.${modelName}.controller;
 
 
+import cn.com.flaginfo.framework.constant.ResultCode;
 import cn.com.flaginfo.framework.rsql.mongodb.dto.RsqlBase;
 import cn.com.flaginfo.framework.vo.QueryVO;
 import cn.com.flaginfo.framework.vo.ResultVO;
+import cn.com.flaginfo.framework.webmvc.utils.ResultGeneratorUtil;
+import cn.com.flaginfo.utils.AuthDataUtils;
 import ${basePackage}.${modelName}.facade.I${model}Facade;
 import ${basePackage}.${modelName}.model.${model};
 import org.springframework.beans.factory.annotation.Autowired;
@@ -76,4 +79,24 @@ public class ${model}Controller {
         }
         return facade.queryByPage(base,page);
     }
+
+        /**
+         * 导出
+         * @param queryVO
+         * @return
+         */
+        @PostMapping("/export")
+        public ResultVO export(@RequestBody QueryVO<RsqlBase> queryVO){
+            PageRequest page = PageRequest.of(queryVO.getPage(),queryVO.getPageSize());
+            RsqlBase base = queryVO.getParams();
+            if (base == null){
+                base = new RsqlBase();
+            }
+            try {
+                facade.export(base, AuthDataUtils.getUserInfo());
+            } catch (Exception e) {
+                return ResultGeneratorUtil.error(ResultCode.FAIL.code(),"创建导出任务失败!");
+            }
+            return ResultGeneratorUtil.success("创建导出任务成功!");
+        }
 }
