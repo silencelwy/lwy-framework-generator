@@ -4,13 +4,7 @@ import cn.com.flaginfo.framework.rsql.mongodb.dto.Rsql;
 import ${basePackage}.${modelPackage}.model.${model};
 import org.springframework.data.domain.Page;
 
-/**
- * @author ${author}
- * @version V1.0
- * @Package ${basePackage}.${modelPackage}.service
- * @Description: code by codeGenerator
- * @date ${.now}
- */
+
 public interface I${model}Service {
     /**
      * 明细

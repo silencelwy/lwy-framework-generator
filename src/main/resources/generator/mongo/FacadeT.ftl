@@ -15,6 +15,7 @@ import cn.com.flaginfo.framework.rsql.mongodb.utils.ParseUtils;
 
 import ${basePackage}.${modelPackage}.facade.I${model}Facade;
 import ${basePackage}.${modelPackage}.model.${model};
+import ${basePackage}.${modelPackage}.vo.${model}Vo;
 import ${basePackage}.${modelPackage}.excel.${model}Excel;
 import ${basePackage}.${modelPackage}.service.I${model}Service;
 
@@ -29,13 +30,6 @@ import org.springframework.scheduling.annotation.Async;
 
 import java.util.*;
 
-/**
- * @author ${author}
- * @version V1.0
- * @Package ${basePackage}.${modelName}.facade.impl
- * @Description: code by codeGenerator
- * @date ${.now}
- */
 @Slf4j
 @Component
 public class ${model}FacadeImpl implements I${model}Facade {
@@ -44,7 +38,8 @@ public class ${model}FacadeImpl implements I${model}Facade {
     @Autowired
     private IExportFileToOss exportFileToOss;
     @Override
-    public ResultVO save(${model} model) {
+    public ResultVO save(${model}Vo modelVo) {
+        ${model} model = BeanUtil.copyProperties(modelVo, ${model}.class);
         String id = service.add(model);
         Map map = new HashMap(1);
         map.put("id",id);
@@ -52,7 +47,8 @@ public class ${model}FacadeImpl implements I${model}Facade {
     }
 
     @Override
-    public ResultVO update(${model} model) {
+    public ResultVO update(${model}Vo modelVo) {
+        ${model} model = BeanUtil.copyProperties(modelVo, ${model}.class);
         service.update(model);
         return ResultGeneratorUtil.success("修改成功");
     }

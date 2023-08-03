@@ -9,13 +9,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import java.util.Date;
 
-/**
- * @author ${author}
- * @version V1.0
- * @Package ${basePackage}.${modelPackage}.model
- * @Description: code by codeGenerator
- * @date ${.now}
- */
+
 @NoArgsConstructor
 @Getter
 @Setter

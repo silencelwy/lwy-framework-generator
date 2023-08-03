@@ -7,13 +7,6 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 import cn.com.flaginfo.framework.model.BaseModel;
 
-/**
- * @author ${author}
- * @version V1.0
- * @Package ${basePackage}.${modelPackage}.model
- * @Description: code by codeGenerator
- * @date ${.now}
- */
 @Data
 @Document(collection="${collectionName}")
 public class ${model} extends BaseModel {

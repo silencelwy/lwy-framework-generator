@@ -8,18 +8,11 @@ import cn.com.flaginfo.framework.vo.ResultVO;
 import cn.com.flaginfo.framework.webmvc.utils.ResultGeneratorUtil;
 import cn.com.flaginfo.utils.AuthDataUtils;
 import ${basePackage}.${modelPackage}.facade.I${model}Facade;
-import ${basePackage}.${modelPackage}.model.${model};
+import ${basePackage}.${modelPackage}.vo.${model}Vo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
 
-/**
- * @author ${author}
- * @version V1.0
- * @Package ${basePackage}.${modelName}.controller
- * @Description: code by codeGenerator
- * @date ${.now}
- */
 @RestController
 @RequestMapping("${modelPath}")
 public class ${model}Controller {
@@ -28,22 +21,22 @@ public class ${model}Controller {
 
     /**
      * 新增
-     * @param model
+     * @param modelVo
      * @return
      */
     @PostMapping("/save")
-    public ResultVO save(@RequestBody ${model} model){
-        return facade.save(model);
+    public ResultVO save(@RequestBody ${model}Vo modelVo){
+        return facade.save(modelVo);
     }
 
     /**
      * 更新
-     * @param model
+     * @param modelVo
      * @return
      */
     @PostMapping("/update")
-    public ResultVO update(@RequestBody ${model} model){
-        return facade.update(model);
+    public ResultVO update(@RequestBody ${model}Vo modelVo){
+        return facade.update(modelVo);
     }
 
     /**

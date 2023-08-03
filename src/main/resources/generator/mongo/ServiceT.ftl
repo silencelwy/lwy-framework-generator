@@ -16,13 +16,6 @@ import java.util.Date;
 import java.util.Optional;
 
 
-/**
- * @author ${author}
- * @version V1.0
- * @Package ${basePackage}.${modelPackage}.service.impl
- * @Description: code by codeGenerator
- * @date ${.now}
- */
 @Service
 @Slf4j
 public class ${model}ServiceImpl implements I${model}Service {

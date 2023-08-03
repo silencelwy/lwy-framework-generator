@@ -5,14 +5,19 @@ import lombok.Data;
 
 import java.io.Serializable;
 
-/**
- * @author ${author}
- * @version V1.0
- * @Package ${basePackage}.${modelPackage}.service
- * @Description: code by codeGenerator
- * @date ${.now}
- */
 @Data
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ${model}Vo implements Serializable {
+
+<#if columns?? && (columns?size > 0) >
+<#list columns as column>
+   /**
+    *    <#if column.desc??>
+    * ${column.desc}
+        </#if>
+    */
+    private ${column.javaType} ${column.name};
+
+</#list>
+</#if>
 }
