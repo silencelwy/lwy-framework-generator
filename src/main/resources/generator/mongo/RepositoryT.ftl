@@ -1,7 +1,7 @@
 
-package ${basePackage}.${modelName}.service;
+package ${basePackage}.${modelPackage}.service;
 import cn.com.flaginfo.framework.rsql.crud.MongodbRsqlCrudRepository;
-import ${basePackage}.${modelName}.model.${model};
+import ${basePackage}.${modelPackage}.model.${model};
 
 /**
  * @author ${author}

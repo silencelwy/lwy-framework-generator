@@ -1,4 +1,4 @@
-package ${basePackage}.${modelName}.vo;
+package ${basePackage}.${modelPackage}.vo;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.Data;
@@ -8,7 +8,7 @@ import java.io.Serializable;
 /**
  * @author ${author}
  * @version V1.0
- * @Package ${basePackage}.${modelName}.service
+ * @Package ${basePackage}.${modelPackage}.service
  * @Description: code by codeGenerator
  * @date ${.now}
  */

@@ -1,4 +1,4 @@
-package ${basePackage}.${modelName}.excel;
+package ${basePackage}.${modelPackage}.excel;
 
 
 import com.alibaba.excel.annotation.ExcelProperty;
@@ -12,7 +12,7 @@ import java.util.Date;
 /**
  * @author ${author}
  * @version V1.0
- * @Package ${basePackage}.${modelName}.model
+ * @Package ${basePackage}.${modelPackage}.model
  * @Description: code by codeGenerator
  * @date ${.now}
  */
@@ -33,9 +33,6 @@ public class ${model}Excel {
 
 </#list>
 </#if>
-
-    @ExcelProperty("更新时间")
-    private Date utime;
 
     @ExcelProperty("创建时间")
     private Date ctime;

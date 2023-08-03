@@ -1,11 +1,11 @@
-package ${basePackage}.${modelName}.service.impl;
+package ${basePackage}.${modelPackage}.service.impl;
 
 import cn.com.flaginfo.framework.id.IdGenerator;
 import cn.com.flaginfo.framework.rsql.mongodb.dto.Rsql;
 
-import ${basePackage}.${modelName}.model.${model};
-import ${basePackage}.${modelName}.service.I${model}Repository;
-import ${basePackage}.${modelName}.service.I${model}Service;
+import ${basePackage}.${modelPackage}.model.${model};
+import ${basePackage}.${modelPackage}.service.I${model}Repository;
+import ${basePackage}.${modelPackage}.service.I${model}Service;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ import java.util.Optional;
 /**
  * @author ${author}
  * @version V1.0
- * @Package ${basePackage}.${modelName}.service.impl
+ * @Package ${basePackage}.${modelPackage}.service.impl
  * @Description: code by codeGenerator
  * @date ${.now}
  */

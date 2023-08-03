@@ -1,13 +1,13 @@
-package ${basePackage}.${modelName}.service;
+package ${basePackage}.${modelPackage}.service;
 
 import cn.com.flaginfo.framework.rsql.mongodb.dto.Rsql;
-import ${basePackage}.${modelName}.model.${model};
+import ${basePackage}.${modelPackage}.model.${model};
 import org.springframework.data.domain.Page;
 
 /**
  * @author ${author}
  * @version V1.0
- * @Package ${basePackage}.${modelName}.service
+ * @Package ${basePackage}.${modelPackage}.service
  * @Description: code by codeGenerator
  * @date ${.now}
  */

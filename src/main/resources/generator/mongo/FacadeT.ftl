@@ -1,4 +1,4 @@
-package ${basePackage}.${modelName}.facade.impl;
+package ${basePackage}.${modelPackage}.facade.impl;
 
 import cn.com.flaginfo.framework.rsql.mongodb.dto.Rsql;
 import cn.com.flaginfo.framework.rsql.mongodb.dto.RsqlBase;
@@ -13,10 +13,10 @@ import cn.com.flaginfo.vo.UserInfo;
 import cn.com.flaginfo.framework.webmvc.utils.ResultGeneratorUtil;
 import cn.com.flaginfo.framework.rsql.mongodb.utils.ParseUtils;
 
-import ${basePackage}.${modelName}.facade.I${model}Facade;
-import ${basePackage}.${modelName}.model.${model};
-import ${basePackage}.${modelName}.excel.${model}Excel;
-import ${basePackage}.${modelName}.service.I${model}Service;
+import ${basePackage}.${modelPackage}.facade.I${model}Facade;
+import ${basePackage}.${modelPackage}.model.${model};
+import ${basePackage}.${modelPackage}.excel.${model}Excel;
+import ${basePackage}.${modelPackage}.service.I${model}Service;
 
 import cn.hutool.core.bean.BeanUtil;
 import lombok.extern.slf4j.Slf4j;

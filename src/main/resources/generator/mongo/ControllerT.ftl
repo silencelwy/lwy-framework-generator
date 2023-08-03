@@ -1,4 +1,4 @@
-package ${basePackage}.${modelName}.controller;
+package ${basePackage}.${modelPackage}.controller;
 
 
 import cn.com.flaginfo.framework.constant.ResultCode;
@@ -7,8 +7,8 @@ import cn.com.flaginfo.framework.vo.QueryVO;
 import cn.com.flaginfo.framework.vo.ResultVO;
 import cn.com.flaginfo.framework.webmvc.utils.ResultGeneratorUtil;
 import cn.com.flaginfo.utils.AuthDataUtils;
-import ${basePackage}.${modelName}.facade.I${model}Facade;
-import ${basePackage}.${modelName}.model.${model};
+import ${basePackage}.${modelPackage}.facade.I${model}Facade;
+import ${basePackage}.${modelPackage}.model.${model};
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.web.bind.annotation.*;
