@@ -1,14 +1,18 @@
-package io.github.silencelwy.generator.mongo;
+package io.github.silencelwy.generator.rpc;
 
+import cn.hutool.core.bean.BeanUtil;
 import cn.hutool.core.collection.CollStreamUtil;
 import cn.hutool.core.collection.CollUtil;
 import cn.hutool.core.util.StrUtil;
 import io.github.silencelwy.generator.code.modelDefine.FieldDefine;
 import io.github.silencelwy.generator.code.modelDefine.ModelDefine;
+import io.github.silencelwy.generator.mongo.ColumnVo;
+import io.github.silencelwy.generator.mongo.MongoCodeVo;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.CharUtils;
 import org.apache.commons.lang3.StringUtils;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -20,15 +24,15 @@ import java.util.List;
  * @author zhengmng
  */
 @Slf4j
-public final class MongoCodeGenerator {
+public final class RpcCodeGenerator {
 
-    private static final MongoCodeGenerator mongoCodeGenerator = new MongoCodeGenerator();
+    private static final RpcCodeGenerator rpcCodeGenerator = new RpcCodeGenerator();
 
-    public static MongoCodeGenerator getInstance() {
-        return mongoCodeGenerator;
+    public static RpcCodeGenerator getInstance() {
+        return rpcCodeGenerator;
     }
 
-    private MongoCodeGenerator() {
+    private RpcCodeGenerator() {
 
     }
 
@@ -66,50 +70,21 @@ public final class MongoCodeGenerator {
     private void codeInit(MongoCodeVo codeVo) {
 
         long startTime = System.currentTimeMillis();
-        //model
-        codeVo.setMPath("/model");
-        codeVo.setFileName(codeVo.getModel() + ".java");
-        FreeMakerMongoTemplate.getFreeMakerTemplate().generateFile("ModelT.ftl", codeVo);
 
-        //ExcelModel
-        codeVo.setMPath("/excel");
-        codeVo.setFileName(codeVo.getModel() + "Excel.java");
-        FreeMakerMongoTemplate.getFreeMakerTemplate().generateFile("ModelExcelT.ftl", codeVo);
+        RpcCodeVo rpcCodeVo = BeanUtil.copyProperties(codeVo, RpcCodeVo.class);
 
-        //vo
-        codeVo.setMPath("/vo");
-        codeVo.setFileName(codeVo.getModel() + "Vo.java");
-        FreeMakerMongoTemplate.getFreeMakerTemplate().generateFile("VoT.ftl", codeVo);
+        rpcCodeVo.setMPath("/rpc/api");
+        rpcCodeVo.setFileName("I"+rpcCodeVo.getModel() + "RpcRemote.java");
+        FreeMakerRpcTemplate.getFreeMakerTemplate().generateFile("RemoteApi.ftl", rpcCodeVo);
 
-        //repository
-        codeVo.setMPath("/service");
-        codeVo.setFileName("I" + codeVo.getModel() + "Repository.java");
-        FreeMakerMongoTemplate.getFreeMakerTemplate().generateFile("RepositoryT.ftl", codeVo);
+        rpcCodeVo.setMPath("/rpc/request");
+        rpcCodeVo.setFileName(rpcCodeVo.getModel() + "RpcRequest.java");
+        FreeMakerRpcTemplate.getFreeMakerTemplate().generateFile("RemoteRequestT.ftl", rpcCodeVo);
 
-        //IService
-        codeVo.setFileName("I" + codeVo.getModel() + "Service.java");
-        FreeMakerMongoTemplate.getFreeMakerTemplate().generateFile("IServiceT.ftl", codeVo);
+        rpcCodeVo.setMPath("/rpc/response");
+        rpcCodeVo.setFileName(rpcCodeVo.getModel() + "RpcResponse.java");
+        FreeMakerRpcTemplate.getFreeMakerTemplate().generateFile("RemoteResponseT.ftl", rpcCodeVo);
 
-        //service
-        codeVo.setMPath("/service/impl");
-        codeVo.setFileName(codeVo.getModel() + "ServiceImpl.java");
-        FreeMakerMongoTemplate.getFreeMakerTemplate().generateFile("ServiceT.ftl", codeVo);
-
-
-        //IFacade
-        codeVo.setMPath("/facade");
-        codeVo.setFileName("I" + codeVo.getModel() + "Facade.java");
-        FreeMakerMongoTemplate.getFreeMakerTemplate().generateFile("IFacadeT.ftl", codeVo);
-
-        //facade
-        codeVo.setMPath("/facade/impl");
-        codeVo.setFileName(codeVo.getModel() + "FacadeImpl.java");
-        FreeMakerMongoTemplate.getFreeMakerTemplate().generateFile("FacadeT.ftl", codeVo);
-
-        //controller
-        codeVo.setMPath("/controller");
-        codeVo.setFileName(codeVo.getModel() + "Controller.java");
-        FreeMakerMongoTemplate.getFreeMakerTemplate().generateFile("ControllerT.ftl", codeVo);
 
         log.info("代码生成耗时{}(ms)", System.currentTimeMillis() - startTime);
     }

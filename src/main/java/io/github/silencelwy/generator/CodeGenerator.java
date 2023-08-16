@@ -4,6 +4,7 @@ import io.github.silencelwy.generator.code.modelDefine.ModelDefine;
 import io.github.silencelwy.generator.code.modelDefine.ModelTypeEnum;
 import io.github.silencelwy.generator.mongo.MongoCodeGenerator;
 import io.github.silencelwy.generator.mysql.MysqlCodeGenerator;
+import io.github.silencelwy.generator.rpc.RpcCodeGenerator;
 import lombok.NonNull;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
@@ -36,6 +37,9 @@ public final class CodeGenerator {
             MongoCodeGenerator.getInstance().generator(modelDefine);
         }else if (ModelTypeEnum.MYSQL.getType().equals(modelTypeEnum.getType())){
             MysqlCodeGenerator.getInstance().generator(modelDefine);
+        }
+        if (modelDefine.isNeedRpc()){
+            RpcCodeGenerator.getInstance().generator(modelDefine);
         }
     }
 
