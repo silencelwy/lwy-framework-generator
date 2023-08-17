@@ -85,6 +85,10 @@ public final class RpcCodeGenerator {
         rpcCodeVo.setFileName(rpcCodeVo.getModel() + "RpcResponse.java");
         FreeMakerRpcTemplate.getFreeMakerTemplate().generateFile("RemoteResponseT.ftl", rpcCodeVo);
 
+        rpcCodeVo.setMPath("/rpcImpl");
+        rpcCodeVo.setFileName("I"+rpcCodeVo.getModel() + "RpcRemoteImpl.java");
+        FreeMakerRpcTemplate.getFreeMakerTemplate().generateFile("RemoteApiImpl.ftl", rpcCodeVo);
+
 
         log.info("代码生成耗时{}(ms)", System.currentTimeMillis() - startTime);
     }
