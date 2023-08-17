@@ -16,13 +16,6 @@ import org.apache.commons.lang3.StringUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * 自动生成代码
- * 自动增加字段注解
- * 自动生成rap json格式
- *
- * @author zhengmng
- */
 @Slf4j
 public final class RpcCodeGenerator {
 

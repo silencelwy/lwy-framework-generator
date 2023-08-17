@@ -13,11 +13,6 @@ public class ClassCodeDto implements Serializable {
     private String clsNamePrefix;
 
     private String fullPackage;
-    /**
-     * @Fields field : 模块名称。
-     * @author mb.wang
-     * @date 2018/5/19 18:36
-     */
     private ArchitectureCode architectureCode;
 
     private String generateMethods;

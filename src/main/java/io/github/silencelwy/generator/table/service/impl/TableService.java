@@ -17,24 +17,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.TreeMap;
-
-/**
- * @author mb.wang
- * @version V1.0
- * @Package io.github.silencelwy.generator.table.service
- * @Description: 数据库表相关操作
- * @date 2018/5/18 17:01
- */
 @Slf4j
 public class TableService extends AbstractAssociativeTableParse implements ITableService {
-
-    /**
-     * 获取数据库中所有的表名称
-     *
-     * @param conn 数据库的连接
-     * @return 该数据库中所有的表名称
-     * @throws SQLException
-     */
     private List<String> getTables(Connection conn) throws SQLException {
         DatabaseMetaData metaData = conn.getMetaData();
         ResultSet resultSet = metaData.getTables(conn.getCatalog(), "%", null, new String[]{"TABLE"});
@@ -45,15 +29,6 @@ public class TableService extends AbstractAssociativeTableParse implements ITabl
         }
         return tables;
     }
-
-    /**
-     * 获取指定表的所有字段名称
-     *
-     * @param conn      数据库连接
-     * @param tableName 表名称
-     * @return 该表所有的字段名称
-     * @throws SQLException
-     */
     private List<String> getColumns(Connection conn, String tableName) throws SQLException {
         DatabaseMetaData metaData = conn.getMetaData();
         ResultSet rs = metaData.getColumns(conn.getCatalog(), null, tableName, null);
@@ -91,16 +66,6 @@ public class TableService extends AbstractAssociativeTableParse implements ITabl
 
         return columnDto;
     }
-
-    /**
-     * 获取表对应的列信息
-     * @author mb.wang
-     * @date 2018/5/19 18:48
-     * @param   table
-     * @param   schema
-     * @return  TableDto
-     * @throws SQLException
-     */
     @Override
     public TableDto getColumnsByTable(String table, String schema) throws SQLException {
         String tableTmp = parseMainTableName(table);

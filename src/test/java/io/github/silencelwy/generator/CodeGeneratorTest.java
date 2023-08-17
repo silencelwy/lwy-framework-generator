@@ -10,7 +10,7 @@ import org.junit.Test;
 public class CodeGeneratorTest {
 
     @Test
-    public void generatorTest(){
+    public void generatorTest() {
         CodeGenerator.getInstance().generator(Lists.newArrayList(
                 ModelDefine.builder()
                         .backPackage("cn.com.flaginfo.test")
@@ -20,15 +20,15 @@ public class CodeGeneratorTest {
                         .modelDesc("人群包")
                         .needCache(true)
                         .needRpc(true)
-                        .modelTypeEnum(ModelTypeEnum.MONGODB)
+                        .modelTypeEnum(ModelTypeEnum.MYSQL)
                         .fieldDefineList(Lists.newArrayList(FieldDefine.builder()
-                                .field("nameTest")
-                                .fieldDesc("姓名")
-                                .fieldName("name_test")
-                                .supportExport(true)
-                                .supportImport(true)
-                                .fieldTypeEnum(FieldTypeEnum.VARCHAR)
-                                .build(),
+                                        .field("nameTest")
+                                        .fieldDesc("姓名")
+                                        .fieldName("name_test")
+                                        .supportExport(true)
+                                        .supportImport(true)
+                                        .fieldTypeEnum(FieldTypeEnum.VARCHAR)
+                                        .build(),
                                 FieldDefine.builder()
                                         .field("ageTest")
                                         .fieldDesc("年龄")
@@ -37,7 +37,7 @@ public class CodeGeneratorTest {
                                         .supportExport(true)
                                         .fieldTypeEnum(FieldTypeEnum.VARCHAR)
                                         .build()
-                                ))
+                        ))
                         .build()
         ));
     }

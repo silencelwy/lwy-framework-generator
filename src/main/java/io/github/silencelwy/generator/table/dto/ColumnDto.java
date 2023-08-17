@@ -3,14 +3,6 @@ package io.github.silencelwy.generator.table.dto;
 import io.github.silencelwy.generator.utils.UnderlineOrCamelUtil;
 import lombok.Data;
 
-/**
- * @author mb.wang
- * @version V1.0
- * @Package io.github.silencelwy.generator.table.dto
- * @Description: //todo (用一句话描述该文件做什么)
- * @date 2018/5/18 16:38
- */
-
 @Data
 public class ColumnDto {
     private String jdbcType;

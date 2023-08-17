@@ -11,12 +11,6 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-/**
- * 模板操作工具
- *
- * @author mb.wang
- * @date 2018/5/19 16:04
- */
 @Data
 @Slf4j
 public class FreeMakerMongoTemplate {

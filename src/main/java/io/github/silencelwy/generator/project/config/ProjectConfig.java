@@ -10,13 +10,6 @@ import org.apache.commons.configuration2.ex.ConfigurationException;
 
 import java.util.ArrayList;
 
-/**
- * @author mb.wang
- * @version V1.0
- * @Package io.github.silencelwy.generator.config
- * @Description: 配置信息获取
- * @date 2018/5/19 19:28
- */
 @Slf4j
 public class ProjectConfig {
     private static PropertiesConfiguration propertiesConfiguration;

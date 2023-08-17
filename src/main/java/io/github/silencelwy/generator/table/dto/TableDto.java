@@ -9,13 +9,6 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.util.List;
 
-/**
- * @author mb.wang
- * @version V1.0
- * @Package io.github.silencelwy.generator.table.dto
- * @Description: 表信息
- * @date 2018/5/18 15:13
- */
 @Data
 public class TableDto {
     @NonNull

@@ -4,9 +4,7 @@ import lombok.Data;
 
 import java.util.List;
 
-/**
- * @author zhengmng
- */
+
 @Data
 public class ClassField {
     private String name;

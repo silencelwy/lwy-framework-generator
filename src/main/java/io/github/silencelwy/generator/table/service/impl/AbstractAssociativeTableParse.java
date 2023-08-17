@@ -7,32 +7,11 @@ import lombok.extern.slf4j.Slf4j;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * @author mb.wang
- * @version V1.0
- * @Package io.github.silencelwy.generator.table.service
- * @Description: 关联表解析
- * @date 2018/5/22 15:39
- */
 @Slf4j
 public abstract class AbstractAssociativeTableParse   {
     public static final String ONE_TO_ONE = "--";
     public static final String ONE_TO_MORE = "->";
     public static final String TABLE_SPLIT_COMMA = ",";
-
-    /**
-     * 解析主表信息
-     *
-     * @param table
-     * @param schema
-     * @return io.github.silencelwy.generator.table.dto.TableDto
-     * @throws
-     * @author mb.wang
-     * @date 2018/5/22 15:51
-     */
-//    public TableDto parseMainTable(final String table,final String schema) throws SQLException {
-//        return getColumnsByTable(parseMainTableName(table), schema);
-//    }
 
     protected String parseMainTableName(String table) {
         String[] str = table.split("-");

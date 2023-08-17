@@ -23,19 +23,7 @@ public final class MysqlCodeGenerator {
 
     public void generator(ModelDefine modelDefine) {
 
-
     }
-    /**
-     * 默认生成所有代码
-     *
-     * @param schema
-     * @param modelName
-     * @param tables
-     * @return void
-     * @throws
-     * @author mb.wang
-     * @date 2018/5/22 17:54
-     */
     public void generator(final String schema, final String modelName, final String... tables) {
         long startTime = System.currentTimeMillis();
         log.info("[{}]生成开始", modelName);
@@ -43,18 +31,6 @@ public final class MysqlCodeGenerator {
         log.info("[{}]生成耗时{}(ms)", modelName, System.currentTimeMillis() - startTime);
     }
 
-    /**
-     * 默认生成所有代码
-     *
-     * @param schema
-     * @param modelName
-     * @param methods   CRUDB
-     * @param tables
-     * @return void
-     * @throws
-     * @author mb.wang
-     * @date 2018/5/22 17:54
-     */
     public void generator(final String schema, final String modelName, final String methods, final String... tables) {
         long startTime = System.currentTimeMillis();
         log.info("[{}]生成开始", modelName);
@@ -65,18 +41,6 @@ public final class MysqlCodeGenerator {
         log.info("[{}]生成耗时{}(ms)", modelName, System.currentTimeMillis() - startTime);
     }
 
-    /**
-     * 模块代码生成。
-     *
-     * @param schema
-     * @param modelName
-     * @param table
-     * @param architectureCodes 为空，表示生成所有代码，需要生成特定代码，传入对应的code即可
-     * @return void
-     * @throws SQLException, InstantiationException, IllegalAccessException
-     * @author mb.wang
-     * @date 2018/5/20 09:48
-     */
     public void generator(final String schema, final String modelName, final String table, final String methods, ArchitectureCode... architectureCodes) {
         log.info("[{}]生成{}对应模块开始", modelName, table);
 

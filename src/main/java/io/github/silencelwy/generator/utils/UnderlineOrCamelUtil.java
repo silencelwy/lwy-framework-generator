@@ -3,11 +3,7 @@ package io.github.silencelwy.generator.utils;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * 驼峰与下横线互转。
- * @author mb.wang
- * @date 2018/5/18 21:03
- */
+
 public class UnderlineOrCamelUtil {
     private static final Pattern PATTERN_UNDER_CAMEL = Pattern.compile("([A-Za-z\\d]+)(_)?");
     private static final Pattern PATTERN_CAMEL_UNDER = Pattern.compile("[A-Z]([a-z\\d]+)?");

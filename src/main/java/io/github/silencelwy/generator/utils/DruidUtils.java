@@ -8,14 +8,6 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- * @author mb.wang
- * @version V1.0
- * @Package io.github.silencelwy.generator.utils
- * @Description: 数据库连接
- * @date 2018/5/18 17:05
- */
-
 public final class DruidUtils {
     private DruidUtils() {
     }
